@@ -29,8 +29,6 @@ services:
     # command: jekyll serve --watch --force_polling --verbose
     ports:
       - 0.0.0.0:8080:80
-    volumes:
-      - $PWD/jekyll_nginx_project:/src/
   jekyll_dev_repaired:
     image: gravitee.io/jekyll-dev:0.0.1-dev-repaired
     env_file: ./container/dev-repaired/.env
@@ -44,8 +42,8 @@ services:
     # command: jekyll serve --watch --force_polling --verbose
     ports:
       - 0.0.0.0:4001:4000
-    volumes:
-      - $PWD/jekyll_dev_repaired_project:/src/
+    # volumes:
+      # - $PWD/jekyll_nginx_project:/src/
   jekyll_nginx_repaired:
     image: gravitee.io/jekyll-nginx:0.0.1-github
     env_file: ./container/gravitee-repaired/.env
