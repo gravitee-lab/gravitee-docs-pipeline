@@ -5,6 +5,8 @@ services:
     image: gravitee.io/jekyll:0.0.1-dev
     env_file: ./container/dev/.env
     build:
+      context: container/dev
+      dockerfile: container/dev/Dockerfile
       args:
         GIT_COMMIT_ID: $GIT_COMMIT_ID
     container_name: jekyll_dev
@@ -18,6 +20,8 @@ services:
     image: gravitee.io/jekyll-nginx:0.0.1-github
     env_file: ./container/gravitee/.env
     build:
+      context: container/gravitee
+      dockerfile: container/gravitee/Dockerfile
       args:
         GIT_COMMIT_ID: $GIT_COMMIT_ID
     container_name: jekyll_dev
