@@ -44,8 +44,8 @@ services:
     # command: jekyll serve --watch --force_polling --verbose
     ports:
       - 0.0.0.0:4001:4000
-    # volumes:
-      # - .:/srv/jekyll
+    volumes:
+      - $PWD/jekyll_dev_repaired_project:/src/
   jekyll_nginx_repaired:
     image: gravitee.io/jekyll-nginx:0.0.1-github
     env_file: ./container/gravitee-repaired/.env
