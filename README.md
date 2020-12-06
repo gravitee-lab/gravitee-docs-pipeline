@@ -16,7 +16,9 @@ export GRAVITEE_DOCS_VERSION=develop
 ./shell/dev.sh
 # ./shell/gravitee.sh
 
-docker-compose up -d
+docker-compose up -d jekyll_dev
+docker-compose up -d jekyll_nginx
+
 ```
 
 

@@ -15,13 +15,12 @@ cd ${OPS_HOME}
 # rm -fr ${OPS_HOME}/container/dev/gravitee-docs-repo/.git
 
 
-export CONTAINER_IMAGE_ID=gravitee.io/jekyll:0.0.1-dev
 
-echo "GIT_COMMIT_ID=${GIT_COMMIT_ID}" > ./.env.dev
+echo "GIT_COMMIT_ID=${GIT_COMMIT_ID}" > ./container/dev/.env
 exit 0
-# docker-compose --env-file ./.env.dev build
 # docker-compose build
-# docker build --build-arg GIT_COMMIT_ID=${GIT_COMMIT_ID} -t ${CONTAINER_IMAGE_ID} ${OPS_HOME}/container/dev
+export CONTAINER_IMAGE_ID=gravitee.io/jekyll:0.0.1-dev
+docker build --build-arg GIT_COMMIT_ID=${GIT_COMMIT_ID} -t ${CONTAINER_IMAGE_ID} ${OPS_HOME}/container/dev
 
 export GIT_COMMIT_ID_LABEL=$(docker inspect --format '{{ index .Config.Labels "oci.image.nonroot.user.name"}}' "${CONTAINER_IMAGE_ID}")
 echo "GIT_COMMIT_ID_LABEL=[${GIT_COMMIT_ID_LABEL}]"

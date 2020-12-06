@@ -44,17 +44,10 @@ RUN ls -allh /src
 COPY serve-dev.sh .
 RUN chmod +x *.sh
 RUN bundle exec jekyll build
-# ---
-# Now I am adding a bit more instructions to build the
-# whole thing before serving the website :
-# => I do not know why Jekyll does not do that
-# => or why the [_config.yml] does not properly defines path for those static files to serve
-# I added this because otherwise, assets files like
-# css files, images, etc... are not properly served by the [bundle exec jekyll serve] command
-# ---
-COPY structure-for-jekyll-serve.sh .
-RUN chmod +x *.sh
-RUN ./structure-for-jekyll-serve.sh
-
-EXPOSE 4000
-CMD ["/src/serve-dev.sh"]
+# ---- ------- ---- #
+# ----  NGINX  ---- #
+# ---- ------- ---- #
+FROM nginx:stable
+LABEL maintainer="Gravitee Team <http://gravitee.io>"
+WORKDIR /usr/share/nginx/html
+COPY --from=builder /src/_site .
