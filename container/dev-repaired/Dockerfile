@@ -50,6 +50,8 @@ RUN bundle exec jekyll build
 # COPY --from=builder /src/_site .
 COPY serve-dev.sh .
 RUN chmod +x *.sh
+RUN ls -allh /src/serve-dev.sh
+RUN ls -allh .
 
 EXPOSE 4000
 CMD ["/src/serve-dev.sh"]
