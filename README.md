@@ -21,6 +21,7 @@ export GRAVITEE_DOCS_VERSION=develop
 
 docker-compose up -d jekyll_nginx
 docker-compose up -d jekyll_dev_repaired
+
 docker-compose up -d jekyll_dev
 
 # - dev teardown :

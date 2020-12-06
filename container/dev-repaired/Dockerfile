@@ -48,7 +48,8 @@ RUN bundle exec jekyll build
 # LABEL maintainer="Gravitee Team <http://gravitee.io>"
 # WORKDIR /usr/share/nginx/html
 # COPY --from=builder /src/_site .
-
+COPY serve-dev.sh .
+RUN chmod +x *.sh
 
 EXPOSE 4000
 CMD ["/src/serve-dev.sh"]
