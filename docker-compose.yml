@@ -21,7 +21,7 @@ services:
     env_file: ./container/gravitee/.env
     build:
       context: container/gravitee/gravitee-docs-repo/
-      dockerfile: gravitee-docs-repo/Dockerfile
+      dockerfile: Dockerfile
       args:
         GIT_COMMIT_ID: $GIT_COMMIT_ID
     container_name: jekyll_nginx
