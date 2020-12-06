@@ -1,8 +1,13 @@
 version: '3.7'
 
 services:
-  jekyll:
-    image: gravitee.io/jekyll:0.0.1
+  jekyll_dev:
+    image: gravitee.io/jekyll:0.0.1-dev
+    env_file: ./.env.dev
+    build:
+      args:
+        GIT_COMMIT_ID: $GIT_COMMIT_ID
+    container_name: jekyll_dev
     # image: jekyll/jekyll:latest
     # command: jekyll serve --watch --force_polling --verbose
     ports:
