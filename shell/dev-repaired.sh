@@ -26,7 +26,7 @@ cp ${OPS_HOME}/container/dev-repaired/serve-dev.sh ${OPS_HOME}/container/dev-rep
 echo "GIT_COMMIT_ID=${GIT_COMMIT_ID}" > ./container/dev-repaired/.env
 exit 0
 # docker-compose build
-export CONTAINER_IMAGE_ID=gravitee.io/jekyll:0.0.1-dev
+export CONTAINER_IMAGE_ID=gravitee.io/jekyll:0.0.1-dev-repaired
 docker build --build-arg GIT_COMMIT_ID=${GIT_COMMIT_ID} -t ${CONTAINER_IMAGE_ID} ${OPS_HOME}/container/dev-repaired
 
 export GIT_COMMIT_ID_LABEL=$(docker inspect --format '{{ index .Config.Labels "oci.image.nonroot.user.name"}}' "${CONTAINER_IMAGE_ID}")
