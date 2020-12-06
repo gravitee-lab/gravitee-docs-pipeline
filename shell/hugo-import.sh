@@ -11,7 +11,8 @@ docker cp jekyll_dev_repaired:/src hugo-to-jekyll/test1/source
 
 hugo import jekyll hugo-to-jekyll/test1/source/src hugo-to-jekyll/test1/target
 
-echo "So hits test gives an error because the Jekyll project does not have a [_posts] folder."
+echo "This test gives an error because the Jekyll project does not have a [_posts] folder."
+
 exit 0
 
 # ---

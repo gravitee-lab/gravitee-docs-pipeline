@@ -12,6 +12,8 @@ git config --global commit.gpgsign true
 git config --global user.name "Jean-Baptiste-Lasselle"
 git config --global user.email jean.baptiste.lasselle.pegasus@gmail.com
 git config --global user.signingkey 7B19A8E1574C2883
+# Now, to sign Git commits, for example inside an SSH session (where TTY is a bit different ...)
+export GPG_TTY=$(tty)
 
 git config --global --list
 
