@@ -21,7 +21,7 @@ docker-compose up -d jekyll_dev
 docker-compose up -d jekyll_nginx
 
 # - dev teardown :
-# docker system prune -f --all && docker system prune -f --volumes && cd && rm -fr gravitee-docs-pipeline/
+# docker-compose down && docker system prune -f --all && docker system prune -f --volumes && cd && rm -fr gravitee-docs-pipeline/
 
 ```
 

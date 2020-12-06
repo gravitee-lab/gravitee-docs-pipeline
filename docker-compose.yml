@@ -6,7 +6,7 @@ services:
     env_file: ./container/dev/.env
     build:
       context: container/dev
-      dockerfile: container/dev/Dockerfile
+      dockerfile: Dockerfile
       args:
         GIT_COMMIT_ID: $GIT_COMMIT_ID
     container_name: jekyll_dev
@@ -21,7 +21,7 @@ services:
     env_file: ./container/gravitee/.env
     build:
       context: container/gravitee
-      dockerfile: container/gravitee/Dockerfile
+      dockerfile: gravitee-docs-repo/Dockerfile
       args:
         GIT_COMMIT_ID: $GIT_COMMIT_ID
     container_name: jekyll_dev
