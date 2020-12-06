@@ -19,9 +19,9 @@ export GRAVITEE_DOCS_VERSION=develop
 ./shell/gravitee.sh
 ./shell/gravitee-repaired.sh
 
-docker-compose up -d jekyll_dev
-docker-compose up -d jekyll_dev_repaired
 docker-compose up -d jekyll_nginx
+docker-compose up -d jekyll_dev_repaired
+docker-compose up -d jekyll_dev
 
 # - dev teardown :
 # docker-compose down && docker system prune -f --all && docker system prune -f --volumes && cd && rm -fr gravitee-docs-pipeline/
