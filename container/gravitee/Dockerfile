@@ -41,8 +41,6 @@ COPY gravitee-docs-repo/_data/* /src/_data/
 COPY gravitee-docs-repo/_layouts/* /src/_layouts/
 
 RUN ls -allh /src
-COPY serve-dev.sh .
-RUN chmod +x *.sh
 RUN bundle exec jekyll build
 # ---- ------- ---- #
 # ----  NGINX  ---- #
