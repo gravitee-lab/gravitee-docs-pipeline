@@ -24,7 +24,7 @@ services:
       dockerfile: gravitee-docs-repo/Dockerfile
       args:
         GIT_COMMIT_ID: $GIT_COMMIT_ID
-    container_name: jekyll_dev
+    container_name: jekyll_nginx
     # image: jekyll/jekyll:latest
     # command: jekyll serve --watch --force_polling --verbose
     ports:
@@ -39,7 +39,7 @@ services:
       dockerfile: Dockerfile
       args:
         GIT_COMMIT_ID: $GIT_COMMIT_ID
-    container_name: jekyll_dev
+    container_name: jekyll_nginx_repaired
     # image: jekyll/jekyll:latest
     # command: jekyll serve --watch --force_polling --verbose
     ports:
