@@ -32,7 +32,7 @@ services:
     volumes:
       - $PWD/jekyll_nginx_project:/src/
   jekyll_dev_repaired:
-    image: gravitee.io/jekyll:0.0.1-dev-repaired
+    image: gravitee.io/jekyll-dev:0.0.1-dev-repaired
     env_file: ./container/dev-repaired/.env
     build:
       context: container/dev-repaired/gravitee-docs-repo/

@@ -53,5 +53,7 @@ RUN chmod +x *.sh
 RUN ls -allh /src/serve-dev.sh
 RUN ls -allh .
 
+VOLUME /src
+
 EXPOSE 4000
 CMD ["/src/serve-dev.sh"]
