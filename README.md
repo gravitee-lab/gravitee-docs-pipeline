@@ -16,6 +16,7 @@ export GRAVITEE_DOCS_VERSION=develop
 # Build the different images
 ./shell/dev.sh
 ./shell/gravitee.sh
+./shell/gravitee-repaired.sh
 
 docker-compose up -d jekyll_dev
 docker-compose up -d jekyll_nginx
