@@ -5,7 +5,8 @@
 
 ```bash
 #
-export G33IO_DOCS_PIPELINE_VERSION=0.0.1-alpha
+export FEATURE_ALIAS='official-build-n-run'
+export G33IO_DOCS_PIPELINE_VERSION="feature/${FEATURE_ALIAS}"
 git clone git@github.com:gravitee-lab/gravitee-docs-pipeline.git
 cd gravitee-docs-pipeline/
 git checkout "${G33IO_DOCS_PIPELINE_VERSION}"
